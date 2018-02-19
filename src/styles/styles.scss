@@ -1,0 +1,15 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/animations';
+@import './base/base';
+@import './base/utilities';
+
+@import './components/buttons';
+@import './components/content-container';
+@import './components/loader';
+
+@import './layout/grid';
+@import './layout/page_start';
+@import './layout/page_game';
+@import './layout/page_result';

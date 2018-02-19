@@ -1,0 +1,51 @@
+
+
+.question-table {
+  @include position-center;
+  border:1px solid black;
+  // margin-top: 20rem;
+  width: 100%;
+
+}
+
+.question {
+  text-align: center;
+  font-size: $l-size;
+  font-weight: 700;
+  line-height: $l-size;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+
+}
+
+.question-list {
+
+  padding: 1rem;
+}
+.alternative {
+  margin-bottom: 1rem;
+  button {
+    background-image: linear-gradient(
+    to right,
+    rgba($color-palette-4, .7),
+    rgba($color-palette-5, .8),
+    rgba($color-palette-5, .7)
+    );
+    border-radius: 10px;
+    color: $color-palette-1;
+    font-size: 2rem;
+    padding: 2rem;
+    width: 100%;
+  }
+}
+ // @include respond(phone-land) { //600px
+ //   .question-table {
+ //     margin-top: 2rem;
+ //   }
+ // }
+ // @include respond(tab-port) { //900px
+ //   .question-table {
+ //     margin-top: 2rem;
+ //   }
+ // }

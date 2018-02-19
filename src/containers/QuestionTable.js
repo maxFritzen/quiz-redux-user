@@ -5,6 +5,9 @@ import Alternative from '../components/Alternative';
 import Question from '../components/Question';
 
 class QuestionTable extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   alternativeHandler = (alternatives) => {
     // returns a shuffled array
@@ -26,7 +29,6 @@ class QuestionTable extends React.Component {
     return alternatives;
   }
 
-
   questionHandler = (questions) => {
     // returns a random question, difficulty level is defined in argument
     const length = Object.keys(questions).length;
@@ -35,12 +37,33 @@ class QuestionTable extends React.Component {
   }
 
  render() {
-   console.log(this.alternativeHandler(this.props.questions.easy[1].alternatives));
+   // console.log(this.alternativeHandler(this.props.questions.easy[1].alternatives));
    const question = this.questionHandler(this.props.questions.easy);
+   const alternatives = this.alternativeHandler(this.props.alternatives);
+   console.log(question);
+
     return (
       <div className="question-table">
 
-         <Question question={question}/>
+         <Question question={this.props.question}/>
+         <div className="question-list">
+           <Alternative
+             alternative={alternatives[0]}
+             // storeAnswer={this.props.storeAnswer}
+             // handleClick={this.props.handleClick}
+           />
+           <Alternative
+             alternative={alternatives[1]}
+             // storeAnswer={this.props.storeAnswer}
+             // handleClick={this.props.handleClick}
+           />
+           <Alternative
+             alternative={alternatives[2]}
+             // storeAnswer={this.props.storeAnswer}
+             // handleClick={this.props.handleClick}
+           />
+         </div>
+         {/* <Question question={question}/>
          <div className="question-list">
            <Alternative
              alternative={this.props.questions.easy[1].alternatives[0]}
@@ -52,7 +75,12 @@ class QuestionTable extends React.Component {
              // storeAnswer={this.props.storeAnswer}
              // handleClick={this.props.handleClick}
            />
-         </div>
+           <Alternative
+             alternative={this.props.questions.easy[1].alternatives[2]}
+             // storeAnswer={this.props.storeAnswer}
+             // handleClick={this.props.handleClick}
+           />
+         </div> */}
 
       </div>
     );

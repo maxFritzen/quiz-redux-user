@@ -1,5 +1,10 @@
 //import action from '../actions/action'
-export default (state = [], action) => {
+
+const defaultState = {
+    difficulty: 'easy'
+}
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case 'NEXT' :
     //next question

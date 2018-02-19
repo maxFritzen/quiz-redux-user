@@ -3,6 +3,7 @@ import React from 'react';
 import Action from './Action';
 import Results from './Results';
 //import QuestionTable from './QuestionTable';
+import QuestionHandler from '../containers/QuestionHandler';
 import QuestionTable from '../containers/QuestionTable';
 
 
@@ -160,11 +161,13 @@ export default class Game extends React.Component {
     }
     return (
       <div>
-        <QuestionTable
+        Game
+        <QuestionHandler />
+        {/* <QuestionTable
           // question={this.state.question}
           // alternatives={this.state.alternatives}
           // handleClick={this.handleClickAlternative}
-        />
+        /> */}
 
       </div>
     );

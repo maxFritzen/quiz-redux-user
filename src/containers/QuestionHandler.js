@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import QuestionTable from './QuestionTable';
+import QuestionTable from '../components/QuestionTable';
 
 class QuestionHandler extends React.Component {
   // Kolla svårighetsgrad.
@@ -13,10 +13,10 @@ class QuestionHandler extends React.Component {
     return questions[rand];
   }
   render() {
+    console.log('QuestionHandler render');
+    console.log('Users answers:', this.props.userAnswers);
+    console.log('Difficulty:', this.props.difficulty);
     const question = this.questionHandler(this.props.questions.easy);
-    console.log(question);
-    console.log(this.props.difficulty);
-    console.log(this.props.questions);
     return (
       <div>
         QuestionHandler
@@ -31,6 +31,7 @@ class QuestionHandler extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+  userAnswers: state.questionReducer.userAnswers,
   difficulty: state.questionReducer.difficulty,
   questions: state.questions
 });

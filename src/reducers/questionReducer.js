@@ -1,16 +1,19 @@
-//import action from '../actions/action'
+import storeAnswer from '../actions'
 
 const defaultState = {
-    difficulty: 'easy'
+    difficulty: 'easy',
+    userAnswers: null
 }
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case 'NEXT' :
+    case 'STORE' :
     //next question
-      console.log('Next question.', action.payload.data);
-    case 'FINISH' :
-    //finished? i dunno
+      console.log('STORE ANSWER', action.payload);
+      return {
+        ...state,
+        userAnswers: action.payload
+      };
     default: return state;
   }
 };

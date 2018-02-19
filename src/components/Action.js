@@ -6,7 +6,8 @@ const Action = (props) => (
        className={props.className}
        disabled={props.disabled}
        onClick={props.handleClick}
-       >Starta quiz!
+       >
+        {props.title} 
      </button>
   </div>
 );

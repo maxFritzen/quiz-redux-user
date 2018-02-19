@@ -2,9 +2,8 @@ import React from 'react';
 
 import Action from './Action';
 import Results from './Results';
-//import QuestionTable from './QuestionTable';
 import QuestionHandler from '../containers/QuestionHandler';
-import QuestionTable from '../containers/QuestionTable';
+
 
 
 const path = require('path');
@@ -121,10 +120,8 @@ export default class Game extends React.Component {
   };
 
   newQuestion = (number, level = 'easy') => {
-      console.log(' this.number: ',this.number);
 
     if (number === this.numberOfQuestions + 1) {
-      //console.log('DONE!');
       //correct and show results
       this.correct();
     } else if(DATA[level][number]) {
@@ -155,6 +152,7 @@ export default class Game extends React.Component {
           className={this.state.actionClassName}
           disabled={this.state.disabled}
           handleClick={this.handleClickAction}
+          title="Starta quiz!"
         />
 
       );
@@ -163,11 +161,6 @@ export default class Game extends React.Component {
       <div>
         Game
         <QuestionHandler />
-        {/* <QuestionTable
-          // question={this.state.question}
-          // alternatives={this.state.alternatives}
-          // handleClick={this.handleClickAlternative}
-        /> */}
 
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Alternative from './Alternative';
+import Alternative from '../containers/Alternative';
 import Question from './Question';
 
 export default class QuestionTable extends React.Component {
@@ -29,22 +29,24 @@ export default class QuestionTable extends React.Component {
   }
 
  render() {
-   console.log('QuestionTable render');
    const alternatives = this.alternativeHandler(this.props.alternatives);
 
     return (
       <div className="question-table">
 
-         <Question question={this.props.question}/>
+         <Question question={this.props.question} />
          <div className="question-list">
            <Alternative
              alternative={alternatives[0]}
+             correctAnswer={this.props.correctAnswer}
            />
            <Alternative
              alternative={alternatives[1]}
+             correctAnswer={this.props.correctAnswer}
            />
            <Alternative
              alternative={alternatives[2]}
+             correctAnswer={this.props.correctAnswer}
            />
          </div>
 

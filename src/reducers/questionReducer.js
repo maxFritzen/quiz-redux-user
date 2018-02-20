@@ -1,19 +1,31 @@
-import storeAnswer from '../actions'
+import { STORE_ANSWER, CORRECT_ANSWER } from '../actions'
 
 const defaultState = {
     difficulty: 'easy',
-    userAnswers: null
+    userAnswers: [],
+    correctAnswers: []
+
 }
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case 'STORE' :
-    //next question
-      console.log('STORE ANSWER', action.payload);
+    case STORE_ANSWER :
       return {
         ...state,
-        userAnswers: action.payload
+        userAnswers: [
+          ...state.userAnswers,
+          action.payload
+        ]
       };
+      case CORRECT_ANSWER: {
+        return {
+          ...state,
+          correctAnswers: [
+            ...state.correctAnswers,
+            action.payload
+          ]
+        }
+      }
     default: return state;
   }
 };

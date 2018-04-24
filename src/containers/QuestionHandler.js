@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import QuestionTable from '../components/QuestionTable';
-import { correctAnswer } from '../actions';
+// import { correctAnswer } from '../actions';
 
 class QuestionHandler extends React.Component {
 
@@ -18,7 +18,7 @@ class QuestionHandler extends React.Component {
   render() {
     const question = this.questionHandler(this.props.questions.easy);
     const correctAnswer = question.correct;
-
+    console.log('questions:', question);
     return (
       <div>
         QuestionHandler
